@@ -20,10 +20,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div>
         <Header language={language} onLanguageChange={handleLanguageChange} />
       
-        <Home />
+        {/* <Home /> */}
       
         <div className="container mt-5">
         <h2>Gráfico de Torta</h2>
@@ -34,18 +33,16 @@ function App() {
 
         <h2 className="mt-5">Gráfico de Progreso</h2>
         <HorizontalBarChart />
-      </div>
-      
-      <Routes>
+        </div>
+        <Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/step1" element={<SavingsFormStep1 />} />
 				<Route path="/step2/:type" element={<SavingsFormStep2 />} />
 			</Routes>
 
+     
       <Footer />
-    </div>
   </BrowserRouter>
   );
 }
-
 export default App;
