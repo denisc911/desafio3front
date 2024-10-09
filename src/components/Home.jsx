@@ -8,9 +8,7 @@ const Home = () => {
       <div className="container">
         <h2>Welcome to Kutxabank</h2>
 
-        <p>
-          <SavingsFormStep1 />
-        </p>
+        <SavingsFormStep1 />
        
       </div>
     </section>
