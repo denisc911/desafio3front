@@ -1,0 +1,28 @@
+/* SavingsFormStep1.css */
+.card-container {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 20px;
+}
+
+.card {
+	background-color: #f0f0f0;
+	border-radius: 10px;
+	width: 200px;
+	height: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+
+.card:hover {
+	transform: scale(1.05);
+	background-color: #e0e0e0;
+}
+
+.card h3 {
+	margin: 0;
+	text-align: center;
+}
