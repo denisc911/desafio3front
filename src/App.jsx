@@ -10,21 +10,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SavingsFormStep1 from './components/SavingsFormStep1';
 import SavingsFormStep2 from './components/SavingsFormStep2';
 
-
 function App() {
   const [language, setLanguage] = useState('EN');
- 
+
   const handleLanguageChange = (newLanguage) => {
     setLanguage(newLanguage); // Update the language state
   };
 
   return (
     <BrowserRouter>
-        <Header language={language} onLanguageChange={handleLanguageChange} />
-      
-        {/* <Home /> */}
-      
-        <div className="container mt-5">
+      <Header language={language} onLanguageChange={handleLanguageChange} />
+
+      {/* <Home /> */}
+
+      <div className="container mt-5">
         <h2>Gráfico de Torta</h2>
         <PieChart />
 
@@ -33,16 +32,15 @@ function App() {
 
         <h2 className="mt-5">Gráfico de Progreso</h2>
         <HorizontalBarChart />
-        </div>
-        <Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/step1" element={<SavingsFormStep1 />} />
-				<Route path="/step2/:type" element={<SavingsFormStep2 />} />
-			</Routes>
+      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/step1" element={<SavingsFormStep1 />} />
+        <Route path="/step2/:type" element={<SavingsFormStep2 />} />
+      </Routes>
 
-     
       <Footer />
-  </BrowserRouter>
+    </BrowserRouter>
   );
 }
 export default App;
