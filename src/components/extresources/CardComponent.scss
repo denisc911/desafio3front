@@ -1,0 +1,12 @@
+/* CSS styles to adjust layout for mobile and larger screens */
+/* CardComponent.css */
+.card {
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  @media (max-width: 767.98px) {
+    .card-body p {
+      text-align: left;
+    }
+  }
