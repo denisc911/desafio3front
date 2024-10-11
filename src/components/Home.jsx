@@ -1,6 +1,6 @@
-// components/Home.js
-import Form from '../components/Form'
+// components/Home.j
 import SavingsFormStep1 from './SavingsFormStep1';
+import ChartsCarousel from './charts/ChartsCarousel';
 
 const Home = () => {
   return (
@@ -9,7 +9,9 @@ const Home = () => {
         <h2>Welcome to Kutxabank</h2>
 
         <p>
+          <ChartsCarousel /> 
           <SavingsFormStep1 />
+          
         </p>
        
       </div>
