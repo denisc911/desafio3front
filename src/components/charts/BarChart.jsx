@@ -1,4 +1,4 @@
-import React from 'react';
+// src/components/charts/BarChart.jsx
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 
@@ -9,11 +9,11 @@ const BarChart = () => {
     labels: ['Necesidades básicas', 'Ocio', 'Ahorro', 'Vivienda', 'Imprevistos'],
     datasets: [
       {
-        label: 'Gastos por categoria',
+        label: 'Gastos por categoría',
         data: [65, 59, 80, 81, 56],
-        backgroundColor: 'rgba(54, 162, 235, 0.5)', // Lighter background
-        borderColor: 'rgba(54, 162, 235, 1)', // Darker border
-        borderWidth: 2, // Border thickness
+        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 2,
       },
     ],
   };
@@ -21,30 +21,24 @@ const BarChart = () => {
   const options = {
     scales: {
       y: {
-        beginAtZero: true, // Start at zero on Y-axis
+        beginAtZero: true,
         grid: {
-          color: '#eee', // Grid color
+          color: '#eee',
         },
       },
       x: {
         grid: {
-          display: false, // Hide grid lines on X-axis
-        },
-      },
-    },
-    plugins: {
-      legend: {
-        labels: {
-          color: '#333', // Legend text color
-          font: {
-            size: 16, // Font size
-          },
+          display: false,
         },
       },
     },
   };
 
-  return <Bar data={data} options={options} />;
+  return (
+    <div style={{ height: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Bar data={data} options={options} />
+    </div>
+  );
 };
 
 export default BarChart;
