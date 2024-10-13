@@ -1,5 +1,5 @@
 // components/SavingsFormStep2.js
-import React from 'react';
+
 import { useParams } from 'react-router-dom';
 
 const SavingsFormStep2 = () => {

@@ -10,20 +10,22 @@ const EdResources = ({ items, handleClick }) => {
   return (
     <div className="container mt-4">
       {isDesktop && (
-        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+        <div className="row">
           {items.map((item, index) => (
-            <div className="col mb-4" key={index}>
-              <div className="card h-100">
-                <img
-                  src={item.imageUrl}
-                  className="card-img-top btn btn-link p-0"
-                  alt={item.title}
-                  onClick={() => handleClick(item)}
-                />
-                <div className="card-body">
-                  <p className="card-text">{item.description}</p>
+            <div className="col" key={index}>
+              <a href={item.link} className="card resource-card">
+                <div className="card-body text-center">
+                  <img
+                    src={item.imageUrl}
+                    alt={item.title}
+                    className="resource-image"
+                    onClick={() => handleClick(item)}
+                  />
+                  <h5 className="card-title mt-3">
+                    <strong>{item.title}</strong>
+                  </h5>
                 </div>
-              </div>
+              </a>
             </div>
           ))}
         </div>
@@ -32,17 +34,20 @@ const EdResources = ({ items, handleClick }) => {
       {isMobile && (
         <ul className="list-group">
           {items.map((item, index) => (
-            <li className="list-group-item d-flex justify-content-between align-items-center" key={index}>
-              <div className="me-3">
-                <p className="mb-1">{item.description}</p>
-              </div>
-              <img
-                src={item.imageUrl}
-                className="img-thumbnail btn btn-link p-0"
-                alt={item.title}
-                onClick={() => handleClick(item)}
-                style={{ width: '100px' }}
-              />
+            <li className="list-group-item" key={index}>
+              <a href={item.link}>
+                <div className="text-center">
+                  <img
+                    src={item.imageUrl}
+                    alt={item.title}
+                    className="resource-image"
+                    onClick={() => handleClick(item)}
+                  />
+                  <p className="mt-2">
+                    <strong>{item.title}</strong>
+                  </p>
+                </div>
+              </a>
             </li>
           ))}
         </ul>

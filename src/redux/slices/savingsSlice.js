@@ -1,10 +1,10 @@
-// redux/slices/savingsSlice.js
+// src/redux/slices/savingsSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 export const savingsSlice = createSlice({
   name: 'savings',
   initialState: {
-    type: null, // Para almacenar el tipo de ahorro seleccionado
+    type: null,
   },
   reducers: {
     setSavingsType: (state, action) => {
@@ -14,5 +14,4 @@ export const savingsSlice = createSlice({
 });
 
 export const { setSavingsType } = savingsSlice.actions;
-
 export default savingsSlice.reducer;
