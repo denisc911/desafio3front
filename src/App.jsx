@@ -1,11 +1,16 @@
 // src/App.jsx
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Home from './components/Home';
+import Header from './components/Header'; 
+import Home from './components/Home'; 
 import Footer from './components/Footer';
-import ChartsCarousel from './components/charts/ChartsCarousel';
-import Hucha from './components/hucha/Hucha';
+import FooterMenu from './components/FooterMenu'; 
+import ChartsCarousel from './components/charts/ChartsCarousel'; 
+import FingerprintLogin from './components/FingerprintLogin';
+import NotFound from './components/NotFound'; 
+import DebitCard from './components/DebitCard';
+import SavingsSettings from './components/SavingsSettings';
+
 
 function App() {
   const [language, setLanguage] = useState('EN');
@@ -20,13 +25,18 @@ function App() {
 
       <div className="container mt-5">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/chart" element={<ChartsCarousel />} />
-          <Route path="/hucha" element={<Hucha />} />
+          <Route path="/" element={<Home />} /> 
+          <Route path="/chart" element={<ChartsCarousel />} /> 
+          <Route path="/fingerprint-login" element={<FingerprintLogin />} /> 
+          <Route path="*" element={<NotFound />} /> 
+          <Route path="/" element={<DebitCard />} /> 
+          <Route path="/settings" element={<SavingsSettings />} /> 
+          
         </Routes>
       </div>
 
-      <Footer />
+      <FooterMenu /> 
+      <Footer /> 
     </BrowserRouter>
   );
 }
