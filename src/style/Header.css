@@ -1,107 +1,98 @@
 /* Header.css */
-
-/* Стили для навигационной панели */
 .navbar {
-    background-color: #fdfbfb; /* Светлый цвет фона */
-    color: #000000; /* Цвет текста */
-    padding: 10px 20px; /* Отступы для навигационной панели */
-    transition: background-color 0.3s ease; /* Плавный переход для изменения цвета */
+    background-color: #fdfbfb; 
+    color: #000000; 
+    padding: 10px 20px; 
+    transition: background-color 0.3s ease;
+    width: 100vw; 
+    height: auto; 
 }
 
-/* Стили для логотипа */
 .navbar-brand img {
-    height: 60px; /* Высота логотипа */
+    height: 60px; 
 }
 
-/* Стили для поисковой строки */
 .form-control {
-    width: auto; /* Авто ширина для поля поиска */
-    min-width: 150px; /* Минимальная ширина для поля поиска */
+    width: auto; 
+    min-width: 150px; 
 }
 
 .btn-outline-success {
-    margin-left: 5px; /* Отступ между полем ввода и кнопкой */
+    margin-left: 5px; 
 }
 
-/* Стили для навигационных ссылок */
 .navbar-nav {
-    display: flex; /* Флекс-отображение для элементов навигации */
-    margin: 0; /* Удалить отступы */
-    padding: 0; /* Удалить внутренние отступы */
+    display: flex; 
+    margin: 0; 
+    padding: 0;
 }
 
 .nav-item {
-    margin: 0 15px; /* Отступ между элементами навигации */
+    margin: 0 15px; 
 }
 
 .nav-link {
-    color: #000000; /* Цвет по умолчанию для ссылок */
-    text-decoration: none; /* Без подчеркивания на ссылках */
-    transition: color 0.3s ease; /* Плавный переход цвета */
+    color: #000000; 
+    text-decoration: none;
+    transition: color 0.3s ease; 
 }
 
 .nav-link:hover {
-    color: #007A87; /* Цвет при наведении */
+    color: #007A87; 
 }
 
 /* Стили для гамбургера */
 .navbar-toggler {
-    background: transparent; /* Прозрачный фон */
-    border: none; /* Без границы */
+    background: transparent; 
+    border: none; 
 }
 
-/* Стили для иконки гамбургера */
 .navbar-toggler-icon {
     display: inline-block;
-    width: 30px; /* Ширина иконки гамбургера */
-    height: 30px; /* Высота иконки гамбургера */
-    background-color: #000; /* Цвет иконки гамбургера */
-    border-radius: 3px; /* Закругленные углы для иконки */
+    width: 30px; 
+    height: 30px; 
+    background-color: #000; 
+    border-radius: 3px; 
 }
 
-/* Мобильные стили */
+/* Скрыть меню и поле поиска на мобильных устройствах */
 @media (max-width: 768px) {
-    .navbar {
-        background-color: #000000; /* Изменение фона на черный для мобильных устройств */
-    }
-
-    /* Цвет логотипа для мобильной версии */
-    .navbar-brand img {
-        filter: brightness(0) invert(1); /* Инвертировать цвет логотипа для лучшей видимости */
-    }
-
     .navbar-nav {
-        flex-direction: column; /* Вертикальное размещение элементов навигации */
-        align-items: center; /* Центрирование элементов навигации */
-        display: none; /* Скрыть по умолчанию */
+        display: none; /* Скрыть меню на мобильных устройствах */
     }
 
-    .navbar-nav.show {
-        display: flex; /* Показать меню, когда isOpen истинно */
+    .form-control {
+        display: none; /* Скрыть поле поиска на мобильных устройствах */
+    }
+
+    .navbar-toggler {
+        display: block; /* Показать кнопку-бургер */
+    }
+
+    .navbar {
+        background-color: #000000; 
+    }
+
+    .navbar-brand img {
+        filter: brightness(0) invert(1); 
     }
 
     .nav-link {
-        color: #ffffff; /* Изменить цвет ссылок на белый для мобильной версии */
-        padding: 10px 0; /* Добавить отступ для области клика */
+        color: #ffffff; 
+        padding: 10px 0;
     }
 
     .nav-link:hover {
-        color: #007A87; /* Изменить цвет при наведении */
-    }
-
-    .navbar-toggler {
-        display: block; /* Показать кнопку гамбургера на мобильных устройствах */
+        color: #007A87; 
     }
 }
 
-/* Скрыть гамбургер на больших экранах */
 @media (min-width: 769px) {
     .navbar-toggler {
-        display: none; /* Скрыть кнопку гамбургера на больших экранах */
+        display: none; /* Скрыть кнопку-бургер на больших экранах */
     }
 }
 
-/* Исправления для выравнивания контейнера на десктопе */
 .navbar > .container,
 .navbar > .container-fluid,
 .navbar > .container-lg,
@@ -109,9 +100,9 @@
 .navbar > .container-sm,
 .navbar > .container-xl,
 .navbar > .container-xxl {
-    display: flex; /* Включаем Flexbox */
-    flex-wrap: nowrap; /* Все элементы в одной строке */
-    align-items: center; /* Центрируем по вертикали */
-    justify-content: space-between; /* Распределяем элементы по горизонтали */
+    display: flex; 
+    flex-wrap: nowrap; 
+    align-items: center;
+    justify-content: space-between; 
+    width: 100%; 
 }
-

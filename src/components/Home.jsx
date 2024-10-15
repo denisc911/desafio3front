@@ -21,6 +21,11 @@ const Home = () => {
         <p>
           <ChartsCarousel />
           <SavingsFormStep1 />
+<<<<<<< HEAD
+          
+          
+=======
+>>>>>>> bff14fd45ae941b47e8f80085592c968ba22fe23
         </p>
       </div>
     </section>
