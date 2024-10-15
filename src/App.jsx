@@ -3,8 +3,14 @@ import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header'; 
 import Home from './components/Home'; 
-import Footer from './components/Footer'; 
+import Footer from './components/Footer';
+import FooterMenu from './components/FooterMenu'; 
 import ChartsCarousel from './components/charts/ChartsCarousel'; 
+import FingerprintLogin from './components/FingerprintLogin';
+import NotFound from './components/NotFound'; 
+import DebitCard from './components/DebitCard';
+import SavingsSettings from './components/SavingsSettings';
+
 
 function App() {
   const [language, setLanguage] = useState('EN');
@@ -21,12 +27,18 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} /> 
           <Route path="/chart" element={<ChartsCarousel />} /> 
+          <Route path="/fingerprint-login" element={<FingerprintLogin />} /> 
+          <Route path="*" element={<NotFound />} /> 
+          <Route path="/" element={<DebitCard />} /> 
+          <Route path="/settings" element={<SavingsSettings />} /> 
+          
         </Routes>
       </div>
 
+      <FooterMenu /> 
       <Footer /> 
     </BrowserRouter>
   );
 }
 
-export default App;
+export default App;  

@@ -4,12 +4,13 @@
     color: #000000; 
     padding: 10px 20px; 
     transition: background-color 0.3s ease;
+    width: 100vw; 
+    height: auto; 
 }
 
 .navbar-brand img {
     height: 60px; 
 }
-
 
 .form-control {
     width: auto; 
@@ -19,7 +20,6 @@
 .btn-outline-success {
     margin-left: 5px; 
 }
-
 
 .navbar-nav {
     display: flex; 
@@ -47,34 +47,34 @@
     border: none; 
 }
 
-
 .navbar-toggler-icon {
     display: inline-block;
     width: 30px; 
     height: 30px; 
     background-color: #000; 
-    border-radius: 3px; /
+    border-radius: 3px; 
 }
 
-
+/* Скрыть меню и поле поиска на мобильных устройствах */
 @media (max-width: 768px) {
+    .navbar-nav {
+        display: none; /* Скрыть меню на мобильных устройствах */
+    }
+
+    .form-control {
+        display: none; /* Скрыть поле поиска на мобильных устройствах */
+    }
+
+    .navbar-toggler {
+        display: block; /* Показать кнопку-бургер */
+    }
+
     .navbar {
         background-color: #000000; 
     }
 
-    
     .navbar-brand img {
         filter: brightness(0) invert(1); 
-    }
-
-    .navbar-nav {
-        flex-direction: column; 
-        align-items: center; 
-        display: none; 
-    }
-
-    .navbar-nav.show {
-        display: flex; 
     }
 
     .nav-link {
@@ -83,21 +83,15 @@
     }
 
     .nav-link:hover {
-        color: #007A87; /
-    }
-
-    .navbar-toggler {
-        display: block;
+        color: #007A87; 
     }
 }
-
 
 @media (min-width: 769px) {
     .navbar-toggler {
-        display: none; 
+        display: none; /* Скрыть кнопку-бургер на больших экранах */
     }
 }
-
 
 .navbar > .container,
 .navbar > .container-fluid,
@@ -110,5 +104,5 @@
     flex-wrap: nowrap; 
     align-items: center;
     justify-content: space-between; 
+    width: 100%; 
 }
-
