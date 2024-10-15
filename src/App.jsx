@@ -9,7 +9,7 @@ import HorizontalBarChart from './components/charts/HorizontalBarChart';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SavingsFormStep1 from './components/SavingsFormStep1';
 import SavingsFormStep2 from './components/SavingsFormStep2';
-
+import FormPersonalized from './components/FormPersonalized';
 
 function App() {
   const [language, setLanguage] = useState('EN');
@@ -38,9 +38,9 @@ function App() {
 				<Route path="/" element={<Home />} />
 				<Route path="/step1" element={<SavingsFormStep1 />} />
 				<Route path="/step2/:type" element={<SavingsFormStep2 />} />
+        <Route path='/form-personalized' element={<FormPersonalized />}/>
 			</Routes>
 
-     
       <Footer />
   </BrowserRouter>
   );
