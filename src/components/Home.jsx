@@ -1,20 +1,32 @@
-// components/Home.j
-import SavingsFormStep1 from './SavingsFormStep1';
-import ChartsCarousel from './charts/ChartsCarousel';
+import React from "react";
+import { Link } from "react-router-dom";
+import EdResources from "./extresources/EdResources";
+import SavingsFormStep1 from "./SavingsFormStep1";
+import ChartsCarousel from "./charts/ChartsCarousel";
+
 
 const Home = () => {
   return (
     <section className="bg-light text-dark p-5">
       <div className="container">
+        <header>
+          <nav>
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/ed-resources">Educational Resources</Link></li>
+            </ul>
+          </nav>
+        </header>
         <h2>Welcome to Kutxabank</h2>
-
         <p>
-          <ChartsCarousel /> 
+          <ChartsCarousel />
           <SavingsFormStep1 />
+<<<<<<< HEAD
           
           
+=======
+>>>>>>> bff14fd45ae941b47e8f80085592c968ba22fe23
         </p>
-       
       </div>
     </section>
   );
