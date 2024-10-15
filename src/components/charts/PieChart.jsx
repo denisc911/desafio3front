@@ -1,4 +1,4 @@
-import React from 'react';
+// src/components/charts/PieChart.jsx
 import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
@@ -30,7 +30,11 @@ const PieChart = () => {
     ],
   };
 
-  return <Pie data={data} />;
+  return (
+    <div style={{ height: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Pie data={data} />
+    </div>
+  );
 };
 
 export default PieChart;

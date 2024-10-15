@@ -1,4 +1,4 @@
-import React from 'react';
+// src/components/charts/HorizontalBarChart.jsx
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 
@@ -19,16 +19,21 @@ const HorizontalBarChart = () => {
   };
 
   const options = {
-    indexAxis: 'y', // Esto cambia la orientación a horizontal
+    indexAxis: 'y',
     scales: {
       x: {
         min: 0,
-        max: 100, // Definimos el rango de 0 a 100%
+        max: 100,
       },
     },
   };
 
-  return <Bar data={data} options={options} />;
+  return (
+    <div style={{ height: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Bar data={data} options={options} />
+    </div>
+  );
 };
 
 export default HorizontalBarChart;
+

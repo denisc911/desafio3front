@@ -1,16 +1,15 @@
 // components/Header.js
-import logoDesktop from '../assets/logo-Kutxabank.svg';  // Import the logo
+import logoDesktop from '../assets/logo-Kutxabank.svg';  
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState,useEffect } from 'react';
 import logoMobile from '../assets/simbolo-y-wordmark-vertical-negro.svg'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../style/Header.css'; // Убедитесь, что вы импортируете свои стили
+import '../style/Header.css'; 
 
 const Header = () => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [isOpen, setIsOpen] = useState(false); // Состояние для гамбургер-меню
-    const [logoSrc, setLogoSrc] = useState(logoDesktop); // Изначально используем логотип для десктопа
-
+    const [isOpen, setIsOpen] = useState(false);
+    const [logoSrc, setLogoSrc] = useState(logoDesktop); 
     const handleSearch = (e) => {
         e.preventDefault();
         console.log(`Searching for: ${searchTerm}`);
