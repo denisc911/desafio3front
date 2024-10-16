@@ -6,6 +6,8 @@ import logoMobile from '../assets/simbolo-y-wordmark-vertical-negro.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/Header.css'; 
 
+
+
 const Header = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [isOpen, setIsOpen] = useState(false);
