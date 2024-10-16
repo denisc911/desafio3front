@@ -1,24 +1,15 @@
 // src/App.jsx
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-<<<<<<< HEAD
-import Header from './components/Header'; 
-import Home from './components/Home'; 
-import Footer from './components/Footer';
-import FooterMenu from './components/FooterMenu'; 
-import ChartsCarousel from './components/charts/ChartsCarousel'; 
-import FingerprintLogin from './components/FingerprintLogin';
-import NotFound from './components/NotFound'; 
-import DebitCard from './components/DebitCard';
-import SavingsSettings from './components/SavingsSettings';
+import Header from './components/header/Header'; 
+import Home from './routes/Home';
+import Hucha from './routes/Hucha';
+import Profile from './routes/Profile';
+import Nav from './components/header/Nav';
+import Login from './routes/Login'
+import Register from './routes/Register'
 
-=======
-import Header from './components/Header';
-import Home from './components/Home';
-import Footer from './components/Footer';
-import ChartsCarousel from './components/charts/ChartsCarousel';
-import Hucha from './components/hucha/Hucha';
->>>>>>> bfece1bc9f9d75aa36ea4ef1ecaa929f513f8b16
+
 
 function App() {
   const [language, setLanguage] = useState('EN');
@@ -29,32 +20,15 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header language={language} onLanguageChange={handleLanguageChange} />
-
-      <div className="container mt-5">
+        <Header language={language} onLanguageChange={handleLanguageChange} />
         <Routes>
-<<<<<<< HEAD
-          <Route path="/" element={<Home />} /> 
-          <Route path="/chart" element={<ChartsCarousel />} /> 
-          <Route path="/fingerprint-login" element={<FingerprintLogin />} /> 
-          <Route path="*" element={<NotFound />} /> 
-          <Route path="/" element={<DebitCard />} /> 
-          <Route path="/settings" element={<SavingsSettings />} /> 
-          
-        </Routes>
-      </div>
-
-      <FooterMenu /> 
-      <Footer /> 
-=======
-          <Route path="/" element={<Home />} />
-          <Route path="/chart" element={<ChartsCarousel />} />
-          <Route path="/hucha" element={<Hucha />} />
-        </Routes>
-      </div>
-
-      <Footer />
->>>>>>> bfece1bc9f9d75aa36ea4ef1ecaa929f513f8b16
+        <Route path="/" element={<Home />} /> 
+        <Route path="/hucha" element={<Hucha />} /> 
+        <Route path="/profile" element={<Profile />} /> 
+        <Route path="/login" element={<Login />} /> 
+        <Route path="/register" element={<Register />} /> 
+      </Routes>
+      <Nav /> 
     </BrowserRouter>
   );
 }
