@@ -1,10 +1,10 @@
 // components/Header.js
-import logoDesktop from '../assets/logo-Kutxabank.svg';  
+import logoDesktop from '../../assets/logo-Kutxabank.svg';  
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState,useEffect } from 'react';
-import logoMobile from '../assets/simbolo-y-wordmark-vertical-negro.svg'; 
+import logoMobile from '../../assets/simbolo-y-wordmark-vertical-negro.svg'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../style/Header.css'; 
+import '../../style/Header.css'; 
 
 const Header = () => {
     const [searchTerm, setSearchTerm] = useState('');

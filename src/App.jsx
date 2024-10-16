@@ -1,11 +1,11 @@
 // src/App.jsx
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header'; 
+import Header from './components/header/Header'; 
 import Home from './routes/Home';
 import Hucha from './routes/Hucha';
 import Profile from './routes/Profile';
-import FooterMenu from './components/FooterMenu';
+import Nav from './components/header/Nav';
 import Login from './routes/Login'
 import Register from './routes/Register'
 
@@ -28,7 +28,7 @@ function App() {
         <Route path="/login" element={<Login />} /> 
         <Route path="/register" element={<Register />} /> 
       </Routes>
-      <FooterMenu /> 
+      <Nav /> 
     </BrowserRouter>
   );
 }

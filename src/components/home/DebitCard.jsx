@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import '../style/chart/DebitCard.css'; 
+import '../../style/chart/DebitCard.css'; 
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Link } from 'react-router-dom';
 
 // Импорт логотипа
-import bankLogo from '../assets/logo-Kutxabank.svg'; 
+import bankLogo from '../../assets/logo-Kutxabank.svg'; 
 
 const DebitCard = () => {
   const [tips, setTips] = useState([]); // Советы по сбережениям
@@ -94,18 +94,6 @@ const DebitCard = () => {
             </ul>
           </div>
         )}
-       
-        <div className="menu-buttons">
-          <Link to="/settings" className="menu-btn">
-            Configuraciones de Ahorros
-          </Link>
-          <Link to="/challenges" className="menu-btn">
-            Retos de Ahorro
-          </Link>
-          <Link to="/transactions" className="menu-btn">
-            Transacciones Recientes
-          </Link>
-        </div>
       </div>
     </div>
   );

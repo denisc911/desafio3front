@@ -1,8 +1,8 @@
 import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
-import { setSavingsType } from '../redux/slices/savingsSlice';
+import { setSavingsType } from '../../redux/slices/savingsSlice';
 import { useNavigate } from 'react-router-dom';
-import '../style/SavingsFormStep1.css'; 
+import '../../style/SavingsFormStep1.css'; 
 
 const SavingsFormStep1 = () => {
   const dispatch = useDispatch();
