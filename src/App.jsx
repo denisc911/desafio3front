@@ -6,6 +6,7 @@ import Home from './routes/Home';
 import Hucha from './routes/Hucha';
 import Profile from './routes/Profile';
 import FooterMenu from './components/FooterMenu';
+import Login from './components/Login/Login'
 
 
 
@@ -23,6 +24,8 @@ function App() {
         <Route path="/" element={<Home />} /> 
         <Route path="/hucha" element={<Hucha />} /> 
         <Route path="/profile" element={<Profile />} /> 
+        <Route path="/login" element={<Login />} /> 
+        <Route path="/register" element={<Profile />} /> 
       </Routes>
       <FooterMenu /> 
     </BrowserRouter>
