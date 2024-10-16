@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { login } from '../../redux/auth/authSlice'
+import { login } from '../redux/auth/authSlice'
 
 const Login = () => {
 	const [formData, setFormData] = useState({ email: '', password: '' });

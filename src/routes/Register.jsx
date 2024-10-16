@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { register } from '../../redux/auth/authSlice';
+import { register } from '../redux/auth/authSlice';
 import { notification } from 'antd';
 
 const Register = () => {
