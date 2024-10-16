@@ -1,4 +1,4 @@
-import '../style/chart/FooterMenu.css';
+import '../../style/chart/FooterMenu.css';
 import { Link } from 'react-router-dom';
 
 const FooterMenu = () => {
