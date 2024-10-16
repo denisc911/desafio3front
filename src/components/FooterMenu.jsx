@@ -1,31 +1,37 @@
 // components/FooterMenu.js
-import '../style/chart/FooterMenu.css'; 
+import '../style/chart/FooterMenu.css';
+import { Link } from 'react-router-dom';
 
 const FooterMenu = () => {
-  return (
-    <div className="footer-menu">
-      <div className="menu-item">
-        <i className="fas fa-home"></i>
-        <p>Resumen</p>
-      </div>
-      <div className="menu-item">
-        <i className="fas fa-envelope"></i>
-        <p>Buzón</p>
-      </div>
-      <div className="menu-item">
-        <i className="fas fa-search"></i>
-        <p>Explorar</p>
-      </div>
-      <div className="menu-item">
-        <i className="fas fa-question-circle"></i>
-        <p>Ayuda</p>
-      </div>
-      <div className="menu-item">
+	return (
+		<div className="footer-menu">
+			<Link to="/">
+				<div className="menu-item">
+					<i className="fas fa-home"></i>
+					<p>Resumen</p>
+				</div>
+			</Link>
+
+			<Link to='/settings'>
+				<div className="menu-item">
+					<i className="fa-solid fa-piggy-bank"></i>
+					<p>Mi hucha</p>
+				</div>
+			</Link>
+
+			<Link to='/profile'>
+				<div className="menu-item">
+					<i className="fas fa-user"></i>
+					<p>Mi Perfil</p>
+				</div>
+			</Link>
+
+			{/* <div className="menu-item">
         <i className="fas fa-ellipsis-v"></i>
         <p>Más</p>
-      </div>
-    </div>
-  );
+      </div> */}
+		</div>
+	);
 };
 
 export default FooterMenu;

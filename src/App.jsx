@@ -10,6 +10,8 @@ import FingerprintLogin from './components/FingerprintLogin';
 import NotFound from './components/NotFound'; 
 import DebitCard from './components/DebitCard';
 import SavingsSettings from './components/SavingsSettings';
+import Register from './components/Register/Register';
+import Login from './components/Login/Login';
 
 
 function App() {
@@ -29,9 +31,10 @@ function App() {
           <Route path="/chart" element={<ChartsCarousel />} /> 
           <Route path="/fingerprint-login" element={<FingerprintLogin />} /> 
           <Route path="*" element={<NotFound />} /> 
-          <Route path="/" element={<DebitCard />} /> 
+          <Route path="/debitcard" element={<DebitCard />} /> 
           <Route path="/settings" element={<SavingsSettings />} /> 
-          
+          <Route path="/register" element={<Register />} /> 
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
 

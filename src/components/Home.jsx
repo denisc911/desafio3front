@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import EdResources from "./extresources/EdResources";
 import SavingsFormStep1 from "./SavingsFormStep1";
 import ChartsCarousel from "./charts/ChartsCarousel";
+import SavingsSettings from "./SavingsSettings";
 
 
 const Home = () => {
@@ -20,7 +21,7 @@ const Home = () => {
         <h2>Welcome to Kutxabank</h2>
         <p>
           <ChartsCarousel />
-          <SavingsFormStep1 />
+          <SavingsSettings />
         </p>
       </div>
     </section>

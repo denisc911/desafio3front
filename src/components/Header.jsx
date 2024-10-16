@@ -50,13 +50,13 @@ const Header = () => {
                 {/* Меню навигации */}
                 <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
                     <ul className="navbar-nav d-flex flex-row me-auto"> {/* Элементы меню в одной строке */}
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <a className="nav-link" href="#web">Erakundearen webgunea</a>
-                        </li>
+                        </li> */}
                         <li className="nav-item">
-                            <a className="nav-link" href="#oficinas">Bulegoak eta kutxazainak</a>
+                            <a className="btn btn-outline-success" href="/login"> Login </a>
                         </li>
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <a className="nav-link" href="#ayuda">Laguntza</a>
                         </li>
                         <li className="nav-item">
@@ -67,7 +67,7 @@ const Header = () => {
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#cat-val">Cat/Val</a>
-                        </li>
+                        </li> */}
                     </ul>
 
                     {/* Поисковая строка */}
@@ -80,7 +80,10 @@ const Header = () => {
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
+                        <li>
                         <button className="btn btn-outline-success" type="submit">Buscar</button>
+                        </li>
+                        
                     </form>
                 </div>
             </div>
