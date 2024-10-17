@@ -1,31 +1,35 @@
-import '../../style/chart/FooterMenu.css';
+import style from '../../style/menu/Nav.module.css'
 import { Link } from 'react-router-dom';
 
-const FooterMenu = () => {
+export default function Nav () {
 	return (
-		<nav className="footer-menu">
-			<Link to="/">
-				<div className="menu-item">
-					<i className="fas fa-home"></i>
+		<nav className={style.menu}>
+			<Link className={style.link} to="/">
+				<div className={style.menu_item}>
+					<picture>
+						<img src="/icon-home.svg" alt="piggy-bank" />
+					</picture>
 					<p>Home</p>
 				</div>
 			</Link>
 
-			<Link to='/hucha'>
-				<div className="menu-item">
-					<i className="fa-solid fa-piggy-bank"></i>
+			<Link className={style.link} to='/hucha'>
+				<div className={style.menu_item}>
+					<picture>
+						<img src="/piggy-bank-svgrepo-com.svg" alt="piggy-bank" />
+					</picture>
 					<p>Hucha</p>
 				</div>
 			</Link>
 
-			<Link to='/profile'>
-				<div className="menu-item">
-					<i className="fas fa-user"></i>
+			<Link className={style.link} to='/profile'>
+				<div className={style.menu_item}>
+					<picture>
+						<img src="/profile.svg" alt="piggy-bank" />
+					</picture>
 					<p>Profile</p>
 				</div>
 			</Link>
 		</nav>
 	);
 };
-
-export default FooterMenu;
