@@ -1,0 +1,48 @@
+.savings-settings {
+    background-color: #ffffff; /* White background for the settings */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    padding: 20px; /* Internal padding */
+    margin: 20px; /* External margin */
+}
+
+.setting-item {
+    margin-bottom: 15px; /* Margin between settings */
+}
+
+.setting-item label {
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Margin below labels */
+    font-weight: bold; /* Bold text for labels */
+}
+
+.setting-item input[type="number"],
+.setting-item input[type="text"],
+.setting-item select {
+    width: 100%; /* Full width for inputs */
+    padding: 10px; /* Internal padding */
+    border: 1px solid #ced4da; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.setting-item input[type="number"]:focus,
+.setting-item input[type="text"]:focus,
+.setting-item select:focus {
+    border-color: #007a87; /* Border color on focus */
+    outline: none; /* No outline */
+}
+
+.save-settings-btn {
+    background-color: #007a87; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners for button */
+    cursor: pointer; /* Hand cursor */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.save-settings-btn:hover {
+    background-color: #005f62; /* Darker color on hover */
+}

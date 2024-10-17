@@ -1,0 +1,51 @@
+/* Estilos para el componente Login */
+.login-container {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+    padding: 30px; /* Espaciado interno */
+    margin: 20px auto; /* Márgenes externos */
+    max-width: 400px; /* Ancho máximo */
+    text-align: center; /* Centrado del contenido */
+}
+
+.login-container h1 {
+    font-size: 24px; /* Tamaño del texto del título */
+    margin-bottom: 10px; /* Espacio debajo del título */
+    color: #333; /* Color del texto */
+}
+
+.login-container p {
+    margin-bottom: 20px; /* Espacio debajo del párrafo */
+    color: #666; /* Color del texto */
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 100%; /* Ancho completo para los inputs */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ced4da; /* Borde ligero */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 15px; /* Espacio entre inputs */
+    transition: border-color 0.3s; /* Transición suave */
+}
+
+.login-container input[type="email"]:focus,
+.login-container input[type="password"]:focus {
+    border-color: #007a87; /* Color del borde al enfocar */
+    outline: none; /* Sin borde de enfoque */
+}
+
+.login-container button[type="submit"] {
+    background-color: #007a87; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.login-container button[type="submit"]:hover {
+    background-color: #005f62; /* Color más oscuro al pasar el ratón */
+}

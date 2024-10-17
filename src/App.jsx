@@ -1,11 +1,15 @@
 // src/App.jsx
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Home from './components/Home';
-import Footer from './components/Footer';
-import ChartsCarousel from './components/charts/ChartsCarousel';
-import Hucha from './components/hucha/Hucha';
+import Header from './components/header/Header'; 
+import Home from './routes/Home';
+import Hucha from './routes/Hucha';
+import Profile from './routes/Profile';
+import Nav from './components/header/Nav';
+import Login from './routes/Login'
+import Register from './routes/Register'
+
+
 
 function App() {
   const [language, setLanguage] = useState('EN');
@@ -16,19 +20,17 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header language={language} onLanguageChange={handleLanguageChange} />
-
-      <div className="container mt-5">
+        <Header language={language} onLanguageChange={handleLanguageChange} />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/chart" element={<ChartsCarousel />} />
-          <Route path="/hucha" element={<Hucha />} />
-        </Routes>
-      </div>
-
-      <Footer />
+        <Route path="/" element={<Home />} /> 
+        <Route path="/hucha" element={<Hucha />} /> 
+        <Route path="/profile" element={<Profile />} /> 
+        <Route path="/login" element={<Login />} /> 
+        <Route path="/register" element={<Register />} /> 
+      </Routes>
+      <Nav /> 
     </BrowserRouter>
   );
 }
 
-export default App;
+export default App;  

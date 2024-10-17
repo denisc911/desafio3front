@@ -1,0 +1,72 @@
+/* Footer.css */
+footer {
+    background-color: #343a40; 
+    color: #fff; 
+    padding: 20px 0; 
+    text-align: center; 
+    width: 100%; 
+    position: relative; 
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px; 
+}
+
+footer ul {
+    margin: 10px 0 0 0;
+    padding: 0;
+    list-style: none; 
+}
+
+footer ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: #fff; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+}
+
+footer ul li a:hover {
+    color: #007A87; 
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .footer-menu {
+        display: flex; /* Show footer menu on mobile */
+        justify-content: space-around; 
+        padding: 10px 0;
+        background-color: #343a40; 
+    }
+
+    footer {
+        display: none; /* Hide standard footer on mobile */
+    }
+
+    footer ul {
+        display: none; /* Hide footer links on mobile */
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    .footer-menu {
+        display: none; /* Hide footer menu on desktop */
+    }
+
+    footer {
+        display: block; /* Show standard footer on desktop */
+    }
+}
+
+/* Optional: Styles for very small screens */
+@media (max-width: 359px) {
+    footer {
+        display: none; /* Hide footer on very small screens */
+    }
+}

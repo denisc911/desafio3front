@@ -1,0 +1,31 @@
+/* FooterMenu.css */
+.footer-menu {
+  display: flex;
+  justify-content: space-around; 
+  padding: 20px 0;
+  background-color: #050505;
+  box-shadow: 0 5px 90px rgba(0, 0, 0, 0.1); 
+}
+
+.menu-item {
+  text-align: center; 
+}
+
+.menu-item i {
+  color: white; 
+  font-size: 24px; /* Increase icon size */
+  margin-bottom: 5px; 
+}
+
+.menu-item p {
+  color: white; 
+  margin: 0; 
+}
+
+/* Show footer menu only on mobile */
+@media (min-width: 768px) {
+  .footer-menu {
+      display: none; /* Hide footer menu on larger screens */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    }
+}
