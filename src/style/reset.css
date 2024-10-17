@@ -15,7 +15,7 @@
   
   a {
     text-decoration: none;
-    color: inherit;
+    color: initial;
   }
   
   img {
@@ -56,4 +56,12 @@
   
   strong, b {
     font-weight: bold;
+  }
+
+  p {
+    color: initial;
+  }
+
+  p:hover {
+    color: initial;
   }

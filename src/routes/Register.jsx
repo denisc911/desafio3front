@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 /* import { register } from '../redux/auth/authSlice'; */
-import { notification } from 'antd';
+//import { notification } from 'antd';
 
 const Register = () => {
 	const [formData, setFormData] = useState({
