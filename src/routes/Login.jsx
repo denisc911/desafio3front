@@ -5,7 +5,6 @@ import '../../src/style/profile/login.css';
 import { useNavigate } from 'react-router-dom';
 import {notification} from 'antd'
 
-
 const Login = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
@@ -44,16 +43,16 @@ const Login = () => {
 			<section className="login-container">
 				<h1>Te damos la bienvenida</h1>
 				<p>
-					Para acceder a todas las funcionalidades, por favor introduce tu email
+					Para acceder a todas las funcionalidades, por favor introduce tu DNI
 					y contraseña.
 				</p>
 
 				<form onSubmit={onSubmit}>
 					<input
-						type="email"
-						name="email"
-						placeholder="Email"
-						value={email}
+						type="number"
+						name="number"
+						placeholder="DNI"
+						value={ email }
 						onChange={onChange}
 					/>
 
