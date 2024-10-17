@@ -1,96 +1,89 @@
 // components/Header.js
-import logoDesktop from '../../assets/logo-Kutxabank.svg';  
+import logoDesktop from '../../assets/logo-Kutxabank.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState,useEffect } from 'react';
-import logoMobile from '../../assets/simbolo-y-wordmark-vertical-negro.svg'; 
+import { useState, useEffect } from 'react';
+import logoMobile from '../../assets/simbolo-y-wordmark-vertical-negro.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../style/Header.css'; 
-
+import '../../style/Header.css';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../redux/auth/authSlice';
 
 
 const Header = () => {
-    const [searchTerm, setSearchTerm] = useState('');
-    const [isOpen, setIsOpen] = useState(false);
-    const [logoSrc, setLogoSrc] = useState(logoDesktop); 
-    const handleSearch = (e) => {
-        e.preventDefault();
-        console.log(`Searching for: ${searchTerm}`);
-    };
+	//Importantes
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const { user } = useSelector((state) => state.auth);
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
+	const onLogout = (e) => {
+		e.preventDefault();
+		dispatch(logout());
+		navigate('/login');
+	};
 
-    useEffect(() => {
-        const handleResize = () => {
-            setLogoSrc(window.innerWidth <= 768 ? logoMobile : logoDesktop);
-            if (window.innerWidth > 768) {
-                setIsOpen(false); // Закрываем меню при переключении на десктоп
-            }
-        };
+	//
+	const [searchTerm, setSearchTerm] = useState('');
+	const [isOpen, setIsOpen] = useState(false);
+	const [logoSrc, setLogoSrc] = useState(logoDesktop);
+	const handleSearch = (e) => {
+		e.preventDefault();
+		console.log(`Searching for: ${searchTerm}`);
+	};
 
-        window.addEventListener('resize', handleResize);
-        handleResize(); // Инициализация состояния при первом рендере
+	const toggleMenu = () => {
+		setIsOpen(!isOpen);
+	};
 
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
+	useEffect(() => {
+		const handleResize = () => {
+			setLogoSrc(window.innerWidth <= 768 ? logoMobile : logoDesktop);
+			if (window.innerWidth > 768) {
+				setIsOpen(false); // Закрываем меню при переключении на десктоп
+			}
+		};
 
-    return (
-        <nav className="navbar navbar-expand-lg navbar-light">
-            <div className="container d-flex align-items-center"> {/* Выравнивание элементов по центру */}
-                <a className="navbar-brand" href="/">
-                    <img src={logoSrc} alt="Kutxabank Logo" />
-                </a>
+		window.addEventListener('resize', handleResize);
+		handleResize(); // Инициализация состояния при первом рендере
 
-                {/* Кнопка для гамбургер-меню */}
-                <button className="navbar-toggler" onClick={toggleMenu} aria-expanded={isOpen} aria-label="Toggle navigation">
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	}, []);
+
+	return (
+		<nav className="navbar navbar-expand-lg navbar-light">
+			<div className="container d-flex align-items-center">
+				<a className="navbar-brand" href="/">
+					<img src={logoSrc} alt="Kutxabank Logo" />
+				</a>
+				{/* <button className="navbar-toggler" onClick={toggleMenu} aria-expanded={isOpen} aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
-                </button>
-
-                {/* Меню навигации */}
-                <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
-                    <ul className="navbar-nav d-flex flex-row me-auto"> {/* Элементы меню в одной строке */}
+                </button> */}
+				{user ? (
+					<>
+					<button onClick={onLogout}>Logout</button>
+					</>
+				) : (
+					<Link to="/login">
+						<button> Login </button>
+					</Link>
+				)}
+				
+                {/* <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
+					<ul className="navbar-nav d-flex flex-row me-auto">
+						{' '}
+						{/* Элементы меню в одной строке */}
+						
                         {/* <li className="nav-item">
-                            <a className="nav-link" href="#web">Erakundearen webgunea</a>
-                        </li> */}
-                        <li className="nav-item">
-                            <a className="btn btn-outline-success" href="/login"> Login </a>
-                        </li>
-                        {/* <li className="nav-item">
-                            <a className="nav-link" href="#ayuda">Laguntza</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#castellano">Castellano</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#english">English</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#cat-val">Cat/Val</a>
-                        </li> */}
-                    </ul>
-
-                    {/* Поисковая строка */}
-                    <form className="d-flex" onSubmit={handleSearch}>
-                        <input
-                            type="search"
-                            className="form-control me-2"
-                            placeholder="Bilatu" // Поисковая строка
-                            aria-label="Search"
-                            value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
-                        />
-                        <li>
-                        <button className="btn btn-outline-success" type="submit">Buscar</button>
-                        </li>
-                        
-                    </form>
-                </div>
-            </div>
-        </nav>
-    );
+							<a className="btn btn-outline-success" href="/login">
+							</a>
+						</li>
+					</ul>
+				</div> */}              
+			</div>
+		</nav>
+	);
 };
 
 export default Header;
