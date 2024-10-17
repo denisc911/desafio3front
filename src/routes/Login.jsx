@@ -9,7 +9,8 @@ import {notification} from 'antd'
 const Login = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
-	const { isError, isSuccess, message } = useSelector((state) => state.auth);
+	
+	const { user, isError, isSuccess, message } = useSelector((state) => state.auth);
 	useEffect(() => {
 		if (isError) {
 			notification.error({ message: 'Error', description: message });
@@ -52,7 +53,7 @@ const Login = () => {
 						type="email"
 						name="email"
 						placeholder="Email"
-						value={email}
+						value={user.email}
 						onChange={onChange}
 					/>
 
@@ -60,7 +61,7 @@ const Login = () => {
 						type="password"
 						name="password"
 						placeholder="Contraseña"
-						value={password}
+						value={user.password}
 						onChange={onChange}
 					/>
 					<p>
