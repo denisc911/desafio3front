@@ -10,7 +10,7 @@ const Login = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	
-	const { user, isError, isSuccess, message } = useSelector((state) => state.auth);
+	const { isError, isSuccess, message } = useSelector((state) => state.auth);
 	useEffect(() => {
 		if (isError) {
 			notification.error({ message: 'Error', description: message });
@@ -53,7 +53,7 @@ const Login = () => {
 						type="email"
 						name="email"
 						placeholder="Email"
-						value={user.email}
+						value={email}
 						onChange={onChange}
 					/>
 
@@ -61,7 +61,7 @@ const Login = () => {
 						type="password"
 						name="password"
 						placeholder="Contraseña"
-						value={user.password}
+						value={password}
 						onChange={onChange}
 					/>
 					<p>
