@@ -29,9 +29,34 @@ const logout = async () => {
         return res.data
 }
 
+// Nueva función para obtener todos los usuarios
+const getAllUsers = async () => {
+    const token = JSON.parse(localStorage.getItem('token'));
+    const res = await axios.get(`${API_URL}/users`, {
+        headers: {
+            authorization: token,
+        },
+    });
+    return res.data;
+};
+
+// Nueva función para eliminar un usuario
+const deleteUser = async (userId) => {
+    const token = JSON.parse(localStorage.getItem('token'));
+    const res = await axios.delete(`${API_URL}/users/${userId}`, {
+        headers: {
+            authorization: token,
+        },
+    });
+    return res.data;
+};
+
+
 const authService = {
 	/* register, */
     login,
-    logout
+    logout,
+    getAllUsers,
+    deleteUser,
 };
 export default authService;

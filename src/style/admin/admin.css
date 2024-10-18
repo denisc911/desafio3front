@@ -1,0 +1,104 @@
+/* Admin.css */
+.admin-container {
+    padding: 20px;
+    background-color: #fdfbfb; 
+    color: #000; 
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.admin-container h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.message {
+    font-size: 1rem;
+    color: #007A87; 
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+thead {
+    background-color: #050505; 
+    color: #fff;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #eaeaea;
+}
+
+/* Botón de eliminar */
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+button:hover {
+    color: #ff4d4f;
+}
+
+/* Adaptaciones para pantallas móviles */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+
+    thead {
+        display: none; /* Ocultar encabezados en dispositivos móviles */
+    }
+
+    tbody tr {
+        margin-bottom: 15px;
+        display: block;
+        background: #fdfbfb;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-align: left;
+        color: #000;
+    }
+    
+    /* Ajustar los últimos elementos */
+    tbody tr:last-of-type td {
+        border-bottom: none;
+    }
+}

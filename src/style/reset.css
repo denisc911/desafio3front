@@ -1,67 +1,83 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html, body {
-    height: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  ul, ol {
-    list-style: none;
-  }
-  
-  a {
-    text-decoration: none;
-    color: initial;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  button {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  input, textarea, button {
-    font: inherit;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  textarea {
-    border: 1px solid #ccc;
-    outline: none;
-  }
-  
-  article, aside, footer, header, nav, section {
-    display: block;
-  }
-  
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  
-  input, button, textarea, select {
-    margin: 0;
-  }
-  
-  strong, b {
-    font-weight: bold;
-  }
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 
-  p {
-    color: initial;
-  }
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+}
 
-  p:hover {
-    color: initial;
-  }
+ul,
+ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #fff; 
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+button {
+	background: white;
+	border: none;
+	cursor: pointer;
+}
+
+input,
+textarea,
+button {
+	font: inherit;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea {
+	border: 1px solid #ccc;
+	outline: none;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+	display: block;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input,
+button,
+textarea,
+select {
+	margin: 0;
+}
+
+strong,
+b {
+	font-weight: bold;
+}
+
+p {
+	text-decoration: none;
+	color: #fff; 
+}
+
+p:hover {
+	color: initial;
+}

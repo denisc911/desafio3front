@@ -1,5 +1,3 @@
-// src/components/charts/ChartsCarousel.jsx
-import 'bootstrap/dist/css/bootstrap.min.css';
 import HorizontalBarChart from './HorizontalBarChart'; 
 import BarChart from './BarChart'; 
 import PieChart from './PieChart'; 

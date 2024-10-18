@@ -93,6 +93,31 @@
     }
 }
 
+/* Estilos para los botones de Login y Logout */
+.navbar button {
+    background-color: #007A87; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 25px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a mano */
+    font-size: 1rem; /* Tamaño del texto */
+    font-weight: bold; /* Negrita para el texto */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+    margin-left: 10px; /* Espacio entre botones */
+}
+
+.navbar button:hover {
+    background-color: #005f62; /* Color de fondo al pasar el cursor */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el cursor */
+}
+
+.navbar button:active {
+    background-color: #004c4e; /* Color al hacer clic */
+    transform: scale(0.98); /* Reduce ligeramente el tamaño al hacer clic */
+}
+
+
 .navbar > .container,
 .navbar > .container-fluid,
 .navbar > .container-lg,

@@ -1,9 +1,6 @@
-// components/Header.js
 import logoDesktop from '../../assets/logo-Kutxabank.svg';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react';
 import logoMobile from '../../assets/simbolo-y-wordmark-vertical-negro.svg';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../style/Header.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
