@@ -4,7 +4,8 @@ import '../style/profile/profile.css';
 export default function Profile() {
     const { user } = useSelector((state) => state.auth);
     
-    const defaultProfileImage = "https://via.placeholder.com/150"; // URL de imagen genérica
+    /* const defaultProfileImage = "https://via.placeholder.com/150"; // URL de imagen genérica */
+    const defaultProfileImage = "../../public/flowers-min.png"
 
     return (
         <div className="profile-container">

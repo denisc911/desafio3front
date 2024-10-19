@@ -32,7 +32,7 @@ const logout = async () => {
 // Nueva función para obtener todos los usuarios
 const getAllUsers = async () => {
     const token = JSON.parse(localStorage.getItem('token'));
-    const res = await axios.get(`${API_URL}/users`, {
+    const res = await axios.get(`${API_URL}/users/allprofiles`, {
         headers: {
             authorization: token,
         },
