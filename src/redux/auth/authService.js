@@ -1,6 +1,6 @@
+import { API_URL } from '../../utils/constanst'
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001';
 
 /* const register = async (userData) => {
 	const res = await axios.post(`${API_URL}/users`, userData);
@@ -8,19 +8,20 @@ const API_URL = 'http://localhost:3001';
 }; */
 
 const login = async (user) => {
-	const res = await axios.post(`${API_URL}/users/login`, user);
-	if (res.data) {
-		localStorage.setItem('user', JSON.stringify(res.data.user));
-		localStorage.setItem('token', JSON.stringify(res.data.token));
-	}
+	const res = await axios.post(`${API_URL}/user/login`, user);
 	return res.data;
+};
+
+const access = async () => {
+    const res = await axios.get(`${API_URL}/user/access`)
+    return res.data
 };
 
 const logout = async () => {
     const token = JSON.parse(localStorage.getItem('token'))
     const res = await
 
-    axios.delete('${API_URL}/users/logout', {
+    axios.delete('${API_URL}/user/logout', {
         headers: {
             authorization: token,
         }
@@ -32,13 +33,24 @@ const logout = async () => {
 // Nueva función para obtener todos los usuarios
 const getAllUsers = async () => {
     const token = JSON.parse(localStorage.getItem('token'));
-    const res = await axios.get(`${API_URL}/users/allprofiles`, {
+    const res = await axios.get(`${API_URL}/user/getall`, {
         headers: {
             authorization: token,
         },
     });
     return res.data;
 };
+
+//OBTENER INFO USUARIO LOGEADO
+const getUserInfo = async () => {
+    const token = JSON.parse(localStorage.getItem('token'));
+    const res = await axios.get(`${API_URL}/user/userinfo`, {
+        headers: {
+            authorization: token,
+        },
+    })
+    return res.data
+}
 
 // Nueva función para eliminar un usuario
 const deleteUser = async (userId) => {
@@ -57,6 +69,8 @@ const authService = {
     login,
     logout,
     getAllUsers,
+    getUserInfo,
     deleteUser,
+    access
 };
 export default authService;
