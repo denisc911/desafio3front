@@ -36,7 +36,8 @@ export const getOneUser = createAsyncThunk(
 	'auth/getOneUser',
 	async (_, thunkAPI) => {
 		try {
-			return await authService.getOneUser();
+			return await authService.getOneUser(),
+			console.log( 'accion desde el authSlice:', authService.getOneUser())
 		} catch (error) {
 			const message = error.response.data.error;
 			return thunkAPI.rejectWithValue(message);
@@ -149,6 +150,8 @@ export const authSlice = createSlice({
 			.addCase(getOneUser.fulfilled, (state, action) => {
 				state.isLoading = false;
 				state.user = action.payload;
+				console.log('payload:', state.user);
+				
 				state.isSuccess = true;
 			})
 			.addCase(getOneUser.rejected, (state, action) => {
