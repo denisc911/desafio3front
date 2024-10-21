@@ -1,0 +1,53 @@
+/* Estilos para el componente Profile */
+.profile-container {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+    padding: 30px; /* Espaciado interno */
+    margin: 20px auto; /* Márgenes externos */
+    max-width: 400px; /* Ancho máximo */
+    width: 90%; /* Ancho del 90% para pantallas más pequeñas */
+    text-align: center; /* Centrado del contenido */
+}
+
+.profile-container h1 {
+    font-size: 24px; /* Tamaño del texto del título */
+    margin-bottom: 15px; /* Espacio debajo del título */
+    color: #333; /* Color del texto */
+}
+
+.profile-container p {
+    font-size: 16px; /* Tamaño del texto del párrafo */
+    margin-bottom: 10px; /* Espacio debajo del párrafo */
+    color: #666; /* Color del texto */
+}
+
+/* Estilos para la imagen de perfil */
+.profile-container img {
+    width: 150px; /* Ancho de la imagen */
+    height: 150px; /* Altura de la imagen */
+    border-radius: 50%; /* Imagen redondeada */
+    margin-bottom: 20px; /* Espacio debajo de la imagen */
+    border: 2px solid #007a87; /* Borde alrededor de la imagen */
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 600px) {
+    .profile-container {
+        padding: 20px; /* Espaciado interno reducido */
+        width: 95%; /* Ancho del 95% para pantallas más pequeñas */
+    }
+
+    .profile-container h1 {
+        font-size: 20px; /* Tamaño del texto del título más pequeño */
+    }
+
+    .profile-container p {
+        font-size: 14px; /* Tamaño del texto del párrafo más pequeño */
+    }
+
+    .profile-container img {
+        width: 120px; /* Ancho de la imagen más pequeño */
+        height: 120px; /* Altura de la imagen más pequeña */
+    }
+}
