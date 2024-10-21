@@ -8,47 +8,36 @@ import axios from 'axios';
 }; */
 
 const login = async (user) => {
-	const res = await axios.post(`${API_URL}/user/login`, user);
+	const res = await axios.put(`${API_URL}/user/login`, user, { withCredentials: true });
 	return res.data;
 };
 
 const access = async () => {
-    const res = await axios.get(`${API_URL}/user/access`)
+    const res = await axios.get(`${API_URL}/user/access`, { withCredentials: true })
     return res.data
 };
 
 const logout = async () => {
-    const token = JSON.parse(localStorage.getItem('token'))
     const res = await
 
     axios.delete('${API_URL}/user/logout', {
-        headers: {
-            authorization: token,
-        }
+        withCredentials: true 
     })
-    if (res.data) localStorage.clear()
-        return res.data
+
+    return res.data
 }
 
 // Nueva función para obtener todos los usuarios
 const getAllUsers = async () => {
-    const token = JSON.parse(localStorage.getItem('token'));
-    const res = await axios.get(`${API_URL}/user/getall`, {
-        headers: {
-            authorization: token,
-        },
-    });
+    const res = await axios.get(`${API_URL}/user/getall`,
+        { withCredentials: true }
+    );
     return res.data;
 };
 
 //OBTENER INFO USUARIO LOGEADO
-const getUserInfo = async () => {
-    const token = JSON.parse(localStorage.getItem('token'));
-    const res = await axios.get(`${API_URL}/user/userinfo`, {
-        headers: {
-            authorization: token,
-        },
-    })
+const getOneUser = async () => {
+    const res = await axios.get(`${API_URL}/user/profile`, { withCredentials: true })
     return res.data
 }
 
@@ -69,7 +58,7 @@ const authService = {
     login,
     logout,
     getAllUsers,
-    getUserInfo,
+    getOneUser,
     deleteUser,
     access
 };
