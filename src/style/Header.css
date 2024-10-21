@@ -6,6 +6,7 @@
     transition: background-color 0.3s ease;
     width: 100vw; 
     height: auto; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 .navbar-brand img {
@@ -41,19 +42,6 @@
     color: #007A87; 
 }
 
-/* Стили для гамбургера */
-.navbar-toggler {
-    background: transparent; 
-    border: none; 
-}
-
-.navbar-toggler-icon {
-    display: inline-block;
-    width: 30px; 
-    height: 30px; 
-    background-color: #000; 
-    border-radius: 3px; 
-}
 
 /* Скрыть меню и поле поиска на мобильных устройствах */
 @media (max-width: 768px) {
@@ -63,10 +51,6 @@
 
     .form-control {
         display: none; /* Скрыть поле поиска на мобильных устройствах */
-    }
-
-    .navbar-toggler {
-        display: block; /* Показать кнопку-бургер */
     }
 
     .navbar {
