@@ -24,8 +24,8 @@ const Login = () => {
         dispatch(reset());
     }, [isError, isSuccess, message]);
 
-    const [formData, setFormData] = useState({ dni: '', password: '' });
-    const { dni, password } = formData;
+    const [formData, setFormData] = useState({ dni: '', contraseña: '' });
+    const { dni, contraseña } = formData;
     const onChange = (e) => {
         setFormData((prevState) => ({
             ...prevState,
@@ -62,9 +62,9 @@ const Login = () => {
 
                     <input
                         type="password"
-                        name="password"
+                        name="contraseña"
                         placeholder="Contraseña"
-                        value={password}
+                        value={contraseña}
                         onChange={onChange}
                     />
                     <p>
