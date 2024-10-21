@@ -7,7 +7,7 @@ const Home = () => {
       <DebitCard />
       <div className="container">
         <p>
-          <ChartsCarousel />
+          <ChartsCarousel /> 
         </p>
       </div>
     </main> 
