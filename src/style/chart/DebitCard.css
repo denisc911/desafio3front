@@ -1,49 +1,45 @@
 .debit-card {
   background-color: #F4F5F6;
   border-radius: 15px;
-  box-shadow: 15px 9px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 15px 9px 15px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 70%; /* Responsive width */
-  max-width: 600px; /* Maximum width for larger screens */
+  width: 70%;
+  max-width: 600px;
   font-family: 'Arial', sans-serif;
-  margin: 5px auto; /* Centering the card on the page */
-}
-/* Контейнер для муравьев */
-.ant-container {
-  position: absolute;
-  top: 140px; /* Расположение над .card-header */
-  left: 0;
-  width: 100%; /* Муравьи бегают по всей ширине */
-  height: 40px; /* Высота области для бега */
-  z-index: 30; /* Муравьи поверх заголовка */
-  overflow: hidden; /* Чтобы муравьи не выходили за контейнер */
+  margin: 16px auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Стили муравьев */
+.debit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 20px 15px 25px rgba(0, 0, 0, 0.2);
+}
+
 .ant {
   position: absolute;
-  top: 0px; /* Положение муравья внутри контейнера */
-  right: 0; /* Начальная точка - справа */
-  width: 55px; /* Размер муравья */
-  animation: moveAntReverse 25s linear infinite; /* Анимация движения муравья */
-  z-index: 20; /* Муравей над карточкой */
+  top: 99px; /* Отрегулируйте по необходимости */
+  right: 0;
+  width: 55px;
+  animation: moveAntReverse 25s linear infinite;
+  z-index: 20;
 }
 
-/* Анимация движения муравья справа налево */
 @keyframes moveAntReverse {
   0% {
-    right: -10px; /* Начальная позиция муравья за экраном справа */
+    right: -10px;
   }
   100% {
-    right: 90%; /* Конечная позиция муравья за экраном слева */
+    right: 90%;
   }
 }
+
 .card-header {
   text-align: center;
   font-size: 25px;
   font-weight: bold;
   margin-bottom: 15px;
   color: #3d3c3c;
+  text-transform: uppercase;
 }
 
 .bank-card {
@@ -53,21 +49,15 @@
   padding: 29px;
   position: relative;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  transition: box-shadow 0.2s ease;
 }
 
-.bank-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 15px;
-  height: 100%;
-  background-color: #f60707;
+.bank-card:hover {
+  box-shadow: 15px 15px 25px rgba(0, 0, 0, 0.2);
 }
 
 .card-logo {
-  width: 150px; /* Reduced logo size for mobile */
+  width: 150px;
   height: auto;
   position: absolute;
   top: 40px;
@@ -79,42 +69,25 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
-  font-size: 28px; /* Smaller text for mobile */
+  font-size: 28px;
   color: #fff;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.8), -1px -1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .balance-info {
-  font-size: 35px; /* Balance font size */
+  font-size: 35px;
   font-weight: bold;
   text-align: center;
   color: #f5f9fa;
   text-shadow: 1px 3px 2px rgba(0, 0, 0, 0.8), -1px -1px 2px rgba(255, 255, 255, 0.5);
 }
 
-.card-holder {
-  font-size: 12px; /* Smaller cardholder text */
-  margin-top: 5px;
-  text-align: center;
-  text-transform: uppercase;
-  color: #fff;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), -3px -1px 2px rgba(255, 255, 255, 0.5);
-  margin-bottom: 15px;
-}
-
-/* Enhancing style for savings and spending warnings */
 .savings-info {
-  margin: 25px 0; /* Increased margin for better spacing */
-  padding: 10px 15px; /* Added padding for better readability */
-  background-color: #eef5f7; /* Light background for contrast */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-.savings-info h4 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #333; /* Text color */
+  margin: 25px 0;
+  padding: 10px 15px;
+  background-color: #eef5f7;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .savings-progress-bar {
@@ -127,18 +100,17 @@
 .savings-progress-bar .progress {
   height: 100%;
   background-color: #4CAF50;
-  transition: width 0.3s ease-in-out; /* Smooth transition for progress bar */
+  transition: width 0.3s ease-in-out;
 }
 
-/* Spending warning box styling */
 .spending-warning {
-  background-color: #fbe3e3; /* Light red background to highlight warning */
-  color: #a33; /* Dark red text color */
+  background-color: #fbe3e3;
+  color: #a33;
   padding: 15px;
-  margin: 20px 0; /* Margin to create spacing */
-  border-left: 5px solid #d9534f; /* Red border to emphasize */
-  border-radius: 5px; /* Slightly rounded corners */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: 20px 0;
+  border-left: 5px solid #d9534f;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .spending-warning h4 {
@@ -147,41 +119,26 @@
   font-weight: bold;
 }
 
-/* Mobile version */
 @media (max-width: 768px) {
   .debit-card {
-    padding: 15px; /* Reduce padding */
-    width: 100%; /* Full width on mobile */
+    padding: 15px;
+    width: 100%;
   }
 
   .bank-card {
-    padding: 20px; /* Reduce internal padding */
+    padding: 20px;
   }
 
   .card-logo {
-    width: 100px; /* Smaller for mobile */
-    top: 30px; /* Position correction */
+    width: 100px;
+    top: 30px;
   }
 
   .card-item {
-    font-size: 24px; /* Smaller card number text */
+    font-size: 24px;
   }
 
   .balance-info {
-    font-size: 30px; /* Smaller balance text */
-  }
-
-  .card-holder {
-    font-size: 14px; /* Smaller cardholder text */
-  }
-
-  .savings-info {
-    padding: 8px 12px; /* Reduced padding for mobile */
-    margin: 20px 0;
-  }
-
-  .spending-warning {
-    padding: 10px; /* Reduced padding for mobile */
-    margin: 15px 0;
+    font-size: 30px;
   }
 }
