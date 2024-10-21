@@ -22,7 +22,7 @@ const Header = () => {
 		navigate('/login');
 	};
 
-	//
+	
 	const [searchTerm, setSearchTerm] = useState('');
 	const [isOpen, setIsOpen] = useState(false);
 	const [logoSrc, setLogoSrc] = useState(logoDesktop);

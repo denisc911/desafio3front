@@ -3,18 +3,47 @@
   border-radius: 15px;
   box-shadow: 15px 9px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  margin: 20px auto;
-  width: 90%; /* Адаптивная ширина */
-  max-width: 600px; /* Максимальная ширина для больших экранов */
+  width: 70%; /* Responsive width */
+  max-width: 600px; /* Maximum width for larger screens */
   font-family: 'Arial', sans-serif;
+  margin: 5px auto; /* Centering the card on the page */
+}
+/* Контейнер для муравьев */
+.ant-container {
+  position: absolute;
+  top: 140px; /* Расположение над .card-header */
+  left: 0;
+  width: 100%; /* Муравьи бегают по всей ширине */
+  height: 40px; /* Высота области для бега */
+  z-index: 30; /* Муравьи поверх заголовка */
+  overflow: hidden; /* Чтобы муравьи не выходили за контейнер */
 }
 
+/* Стили муравьев */
+.ant {
+  position: absolute;
+  top: 0px; /* Положение муравья внутри контейнера */
+  right: 0; /* Начальная точка - справа */
+  width: 55px; /* Размер муравья */
+  animation: moveAntReverse 25s linear infinite; /* Анимация движения муравья */
+  z-index: 20; /* Муравей над карточкой */
+}
+
+/* Анимация движения муравья справа налево */
+@keyframes moveAntReverse {
+  0% {
+    right: -10px; /* Начальная позиция муравья за экраном справа */
+  }
+  100% {
+    right: 90%; /* Конечная позиция муравья за экраном слева */
+  }
+}
 .card-header {
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   margin-bottom: 15px;
-  color: #333;
+  color: #3d3c3c;
 }
 
 .bank-card {
@@ -38,47 +67,54 @@
 }
 
 .card-logo {
-  width: 120px; /* Уменьшен размер логотипа для мобильных */
+  width: 150px; /* Reduced logo size for mobile */
   height: auto;
   position: absolute;
   top: 40px;
   right: 10px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card-item {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
-  font-size: 28px; /* Меньший размер текста на мобильных */
+  font-size: 28px; /* Smaller text for mobile */
   color: #fff;
-  text-shadow:
-      2px 2px 3px rgba(0, 0, 0, 0.8),
-      -1px -1px 2px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.8), -1px -1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .balance-info {
-  font-size: 35px; /* Уменьшение шрифта баланса */
+  font-size: 35px; /* Balance font size */
   font-weight: bold;
   text-align: center;
   color: #f5f9fa;
-  text-shadow:
-      1px 3px 2px rgba(0, 0, 0, 0.8),
-      -1px -1px 2px rgba(255, 255, 255, 0.5);
+  text-shadow: 1px 3px 2px rgba(0, 0, 0, 0.8), -1px -1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .card-holder {
-  font-size: 16px; /* Меньший размер текста владельца карты */
-  margin-top: 10px;
+  font-size: 12px; /* Smaller cardholder text */
+  margin-top: 5px;
   text-align: center;
   text-transform: uppercase;
   color: #fff;
-  text-shadow:
-      1px 1px 2px rgba(0, 0, 0, 0.8),
-      -1px -1px 2px rgba(255, 255, 255, 0.5);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), -3px -1px 2px rgba(255, 255, 255, 0.5);
+  margin-bottom: 15px;
 }
 
+/* Enhancing style for savings and spending warnings */
 .savings-info {
-  margin: 18px 0;
+  margin: 25px 0; /* Increased margin for better spacing */
+  padding: 10px 15px; /* Added padding for better readability */
+  background-color: #eef5f7; /* Light background for contrast */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.savings-info h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333; /* Text color */
 }
 
 .savings-progress-bar {
@@ -91,57 +127,61 @@
 .savings-progress-bar .progress {
   height: 100%;
   background-color: #4CAF50;
+  transition: width 0.3s ease-in-out; /* Smooth transition for progress bar */
 }
 
-.menu-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+/* Spending warning box styling */
+.spending-warning {
+  background-color: #fbe3e3; /* Light red background to highlight warning */
+  color: #a33; /* Dark red text color */
+  padding: 15px;
+  margin: 20px 0; /* Margin to create spacing */
+  border-left: 5px solid #d9534f; /* Red border to emphasize */
+  border-radius: 5px; /* Slightly rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.menu-btn {
-  background-color: #007A87;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  text-decoration: none;
-  text-align: center;
-  transition: background-color 0.3s;
+.spending-warning h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.menu-btn:hover {
-  background-color: #0641d4;
-}
-
-/* Мобильная версия */
+/* Mobile version */
 @media (max-width: 768px) {
   .debit-card {
-      padding: 15px; /* Уменьшаем отступы */
-      width: 100%; /* Полная ширина на мобильных */
+    padding: 15px; /* Reduce padding */
+    width: 100%; /* Full width on mobile */
   }
 
   .bank-card {
-      padding: 20px; /* Уменьшаем внутренние отступы */
+    padding: 20px; /* Reduce internal padding */
   }
 
   .card-logo {
-      width: 100px; /* Еще меньше для мобильных */
-      top: 30px; /* Коррекция позиции */
+    width: 100px; /* Smaller for mobile */
+    top: 30px; /* Position correction */
   }
 
   .card-item {
-      font-size: 24px; /* Уменьшаем размер текста номера карты */
+    font-size: 24px; /* Smaller card number text */
   }
 
   .balance-info {
-      font-size: 30px; /* Меньший текст баланса */
+    font-size: 30px; /* Smaller balance text */
   }
 
   .card-holder {
-      font-size: 14px; /* Меньший текст владельца карты */
+    font-size: 14px; /* Smaller cardholder text */
   }
-  
-  .menu-btn {
-      padding: 8px; /* Уменьшаем размеры кнопок */
+
+  .savings-info {
+    padding: 8px 12px; /* Reduced padding for mobile */
+    margin: 20px 0;
+  }
+
+  .spending-warning {
+    padding: 10px; /* Reduced padding for mobile */
+    margin: 15px 0;
   }
 }
