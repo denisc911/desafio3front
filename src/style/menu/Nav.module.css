@@ -1,35 +1,57 @@
-/* FooterMenu.css */
 .menu {
-  width: 100svw;
-  height: 12svh;
   display: flex;
   justify-content: space-around;
-  align-items: center; 
-  padding: 20px 0;
-  background-color: #050505;
-  box-shadow: 0 5px 90px rgba(0, 0, 0, 0.1); 
-  position: fixed;
-  bottom: 0;
+  align-items: center;
+  margin-top: 50px;
+  background-color: #000000; /* Keep your original background color */
+}
+
+.menu_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+   transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
 .link {
-  color: white;
-  text-decoration: none;
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Keep the color consistent */
 }
 
-.menu_item{
-  text-align: center; 
+.menu_item picture img {
+  width: 30px; /* Default icon size */
+  height: 30px;
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth icon scaling and color transition */
+}
+
+.menu_item:hover picture img {
+  transform: scale(1.3); /* Increase icon size on hover */
 }
 
 .menu_item p {
-  font-weight: bold;
-  font-size: 1.1rem;
+  margin-top: 5px;
+  font-size: 14px; /* Font size for labels */
+  font-weight: 600;
+  color: #333; /* Dark gray text color */
+  transition: color 0.3s ease; /* Smooth color change */
 }
 
-/* Show footer menu only on mobile */
-@media (min-width: 768px) {
-  .menu {
-      display: none; /* Hide footer menu on larger screens */
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-    }
+.menu_item:hover p {
+  color: #ff4d4f; /* Change text color to red on hover */
+}
+
+.menu_item:hover {
+  animation: bounce 0.4s; /* Apply bounce effect on hover */
+}
+
+/* Keyframes for bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1); /* Start and end at original size */
+  }
+  50% {
+    transform: scale(1.4); /* Increase size temporarily */
+  }
 }
