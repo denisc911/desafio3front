@@ -1,4 +1,5 @@
 
+import ChartsCarousel from "../components/charts/ChartsCarousel";
 import DebitCard from "../components/home/DebitCard";
 
 const Home = () => {
@@ -6,6 +7,9 @@ const Home = () => {
     <main className="bg-light text-dark p-5">
       <div className="container">
           <DebitCard />
+        <p>
+          <ChartsCarousel />
+        </p>
       </div>
     </main>
   );
