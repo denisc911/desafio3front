@@ -5,6 +5,7 @@ import '../../style/Header.css';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
+
     const navigate = useNavigate();
     
     // Estado local para el usuario
