@@ -1,6 +1,7 @@
 import style from '../../style/menu/Nav.module.css';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import subscriptions from '../../assets/subscribe-icon.svg';
 
 export default function Nav() {
   const { user } = useSelector((state) => state.auth);
@@ -27,9 +28,9 @@ export default function Nav() {
       <Link className={style.link} to="/subscriptions">
         <div className={style.menu_item}>
           <picture>
-            <img src="/piggy-bank-svgrepo-com.svg" alt="piggy-bank" />
+            <img src={subscriptions} alt="piggy-bank" />
           </picture>
-          <p>Subscriptions</p>
+          <p>Subscripciones</p>
         </div>
       </Link>
 
