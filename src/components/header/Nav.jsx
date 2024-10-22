@@ -30,7 +30,7 @@ export default function Nav() {
           <picture>
             <img src={subscriptions} alt="piggy-bank" />
           </picture>
-          <p>Subscripciones</p>
+          <p>Subscripc.</p>
         </div>
       </Link>
 

@@ -60,7 +60,7 @@ const Subscriptions = () => {
               Spotify
             </p>
             <p>
-              10€
+              <span className="importe">10€</span>
               <Switch
                 type="checkbox"
                 onChange={(checked) => handleSwitchChange(10, checked)}
@@ -78,7 +78,7 @@ const Subscriptions = () => {
               Netflix
             </p>
             <p>
-              15€
+              <span className="importe">15€</span>
               <Switch
                 type="checkbox"
                 onChange={(checked) => handleSwitchChange(15, checked)}
@@ -96,10 +96,28 @@ const Subscriptions = () => {
               Amazon Prime
             </p>
             <p>
-              5€
+              <span className="importe">5€</span>
               <Switch
                 type="checkbox"
                 onChange={(checked) => handleSwitchChange(5, checked)}
+                checkedChildren={<CheckOutlined />}
+                unCheckedChildren={<CloseOutlined />}
+                defaultChecked
+              />
+            </p>
+          </div>
+        </Card>
+        <Card className="card">
+          <div className="cardContent">
+            <p>
+              <InfoCircleOutlined className="iconInfoSubs" />
+              Spotify
+            </p>
+            <p>
+              <span className="importe">9€</span>
+              <Switch
+                type="checkbox"
+                onChange={(checked) => handleSwitchChange(9, checked)}
                 checkedChildren={<CheckOutlined />}
                 unCheckedChildren={<CloseOutlined />}
                 defaultChecked
