@@ -1,35 +1,25 @@
-import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from 'react';
 import '../style/profile/profile.css';
-import { getOneUser } from "../redux/auth/authSlice";
 
 export default function Profile() {
-    const { user } = useSelector((state) => state.auth);
-    const dispatch = useDispatch();
+    // Estado para almacenar los datos del usuario
+    const [userData, setUserData] = useState(null);
 
-    const [ userData, setUserData ] = useState(null)
-
-    
-    
+    // Al montar el componente, intentar cargar el usuario desde localStorage
     useEffect(() => {
-        // Llama a la acción para obtener el usuario
-        dispatch(getOneUser());
-    }, [dispatch]);
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUserData(JSON.parse(storedUser)); // Si hay un usuario, lo cargamos en el estado
+        } else {
+            setUserData(null); // Si no hay usuario, establecemos userData como null
+        }
+    }, []); // Solo se ejecuta al montar el componente
 
-    // Actualiza userData cuando el usuario cambia en el estado de Redux
-    useEffect(() => {
-        setUserData(user);
-    }, [user]);
-
-
-    console.log("User in Profile:", user);
-
-    /* const defaultProfileImage = "https://via.placeholder.com/150"; // URL de imagen genérica */
-    const defaultProfileImage = "../../public/flowers-min.png"
+    const defaultProfileImage = "../../public/flowers-min.png"; // Imagen por defecto
 
     return (
         <div className="profile-container">
-            <h1>Profile</h1>
+            <h1>Tu Perfil</h1>
             <img
                 src={userData?.profileImage || defaultProfileImage} 
                 alt="Foto de perfil"
