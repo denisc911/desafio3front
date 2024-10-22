@@ -11,6 +11,14 @@
 
 .login-container:hover {
     transform: translateY(-5px);
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+    padding: 30px; /* Espaciado interno */
+    margin: 20px auto; /* Márgenes externos */
+    max-width: 400px; /* Ancho máximo */
+    width: 90%; /* Ancho del 90% para pantallas más pequeñas */
+    text-align: center; /* Centrado del contenido */
 }
 
 .login-container h1 {
@@ -29,6 +37,7 @@
 /* Estilos para las entradas */
 .login-container input[type="text"], 
 .login-container input[type="password"] {
+
     width: 100%;
     padding: 12px;
     border: 1px solid #ced4da;
@@ -36,6 +45,14 @@
     margin-bottom: 20px;
     font-size: 16px;
     transition: border-color 0.3s, box-shadow 0.3s;
+    width: 100%; /* Ancho completo para los inputs */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ced4da; /* Borde ligero */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 15px; /* Espacio entre inputs */
+    transition: border-color 0.3s; /* Transición suave */
+    font-size: 16px; /* Tamaño del texto */
+
 }
 
 /* Estilos para el foco en las entradas */
@@ -48,6 +65,7 @@
 
 /* Estilos para el botón de envío */
 .login-container button[type="submit"] {
+
     background-color: #007a87;
     color: white;
     border: none;
@@ -56,6 +74,17 @@
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s, transform 0.3s;
+    background-color: #007a87; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 12px 25px; /* Espaciado del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+    transition: background-color 0.3s; /* Transición suave */
+    font-size: 16px; /* Tamaño del texto del botón */
+    width: 100%; /* Botón del mismo ancho que las entradas */
+    max-width: 200px; /* Ancho máximo del botón */
+    margin-top: 10px; /* Espacio superior */
 }
 
 /* Cambio de color del botón al pasar el ratón */
