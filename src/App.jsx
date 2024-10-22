@@ -12,10 +12,9 @@ import Register from './routes/Register'
 import Admin from './components/admin/Admin'
 
 
-
 function App() {
 
-  const { user } = useSelector((state) => state.auth);
+  // const { user } = useSelector((state) => state.auth);
 
   const [language, setLanguage] = useState('EN');
 
