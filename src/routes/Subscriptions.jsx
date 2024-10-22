@@ -41,13 +41,13 @@ const Subscriptions = () => {
         <h2 className="subtitleBody">Gestiona y optimiza tus subscripciones</h2>
         <Card className="card">
           <div className="cardContent">
-            <b>Gasto anual estimado</b>
+            <p className="cardTitle">Gasto anual estimado</p>
             <p>{counter}€</p>
           </div>
         </Card>
         <Card className="card">
           <div className="cardContent">
-            <b>Gasto mensual estimado</b>
+            <p className="cardTitle">Gasto mensual estimado</p>
             <p>{counter2}€</p>
           </div>
         </Card>
