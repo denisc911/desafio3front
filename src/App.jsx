@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import Header from './components/header/Header'; 
 import Home from './routes/Home';
 import Hucha from './routes/Hucha';
+import Subscriptions from './routes/Subscriptions';
 import Profile from './routes/Profile';
 import Nav from './components/header/Nav';
 import Login from './routes/Login'
@@ -29,6 +30,7 @@ function App() {
         <Routes>
         <Route path="/" element={<Home />} /> 
         <Route path="/hucha" element={<Hucha />} /> 
+        <Route path="/subscriptions" element={<Subscriptions />} /> 
         <Route path="/profile" element={<Profile />} /> 
         <Route path="/login" element={<Login />} /> 
         <Route path="/register" element={<Register />} /> 
