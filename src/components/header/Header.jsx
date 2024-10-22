@@ -54,9 +54,7 @@ const Header = () => {
 				<a className="navbar-brand" href="/">
 					<img src={logoSrc} alt="Kutxabank Logo" />
 				</a>
-				{/* <button className="navbar-toggler" onClick={toggleMenu} aria-expanded={isOpen} aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button> */}
+				
 				{user ? (
 					<>
 					<button onClick={onLogout}>Logout</button>
@@ -67,17 +65,7 @@ const Header = () => {
 					</Link>
 				)}
 				
-                {/* <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
-					<ul className="navbar-nav d-flex flex-row me-auto">
-						{' '}
-						{/* Элементы меню в одной строке */}
-						
-                        {/* <li className="nav-item">
-							<a className="btn btn-outline-success" href="/login">
-							</a>
-						</li>
-					</ul>
-				</div> */}              
+        
 			</div>
 		</nav>
 	);

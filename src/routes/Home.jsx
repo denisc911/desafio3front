@@ -4,11 +4,11 @@ import DebitCard from "../components/home/DebitCard";
 const Home = () => {
   return (
     <main className="bg-light text-dark p-5">
-      <DebitCard />
+      
       <div className="container">
-        <p>
-          <ChartsCarousel /> 
-        </p>
+
+      <DebitCard />
+      
       </div>
     </main> 
   );
