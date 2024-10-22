@@ -7,7 +7,7 @@ const Home = () => {
       <div className="container">
           <DebitCard />
       </div>
-    </main> */}
+    </main>
   );
 };
 
