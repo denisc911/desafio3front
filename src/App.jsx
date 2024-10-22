@@ -8,9 +8,11 @@ import Hucha from './routes/Hucha';
 import Subscriptions from './routes/Subscriptions';
 import Profile from './routes/Profile';
 import Nav from './components/header/Nav';
-import Login from './routes/Login';
-import Register from './routes/Register';
-import Admin from './components/admin/Admin';
+import Login from './routes/Login'
+import Register from './routes/Register'
+import Admin from './components/admin/Admin'
+
+
 
 function App() {
   // const { user } = useSelector((state) => state.auth);

@@ -32,14 +32,19 @@ const getAllUsers = async () => {
     const res = await axios.get(`${API_URL}/user/getall`,
         { withCredentials: true }
     );
+    console.log("User data from API:", res.data);
     return res.data;
 };
 
 //OBTENER INFO USUARIO LOGEADO
 const getOneUser = async () => {
-    const res = await axios.get(`${API_URL}/user/profile`, { withCredentials: true })
-    return res.data
-}
+    const res = await axios.get(`${API_URL}/user/profile`, { 
+        withCredentials: true,
+    });
+    console.log( 'peticion desde authService:', res.data);
+    
+    return res.data; // Solo retorna los datos
+};
 
 // Nueva función para eliminar un usuario
 const deleteUser = async (userId) => {

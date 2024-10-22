@@ -1,0 +1,63 @@
+/* Estilos para el contenedor de las cards */
+.cards-container {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    grid-template-columns: 1fr;
+    position: relative;
+    justify-items: center;
+}
+
+/* Estilos individuales para cada card */
+.card {
+    width: 100%;
+    max-width: 300px;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+/* Imagen de fondo de cada card */
+.card-background {
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    height: 150px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Contenido dentro de la card */
+.card-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Título de los artículos */
+.card-content h3 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Animaciones al pasar el cursor (en caso de escritorio) */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes para vista móvil */
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}
