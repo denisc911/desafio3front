@@ -40,7 +40,7 @@ const Login = () => {
             // Redirige después de un tiempo para que el componente Header tenga tiempo de actualizarse
             setTimeout(() => {
                 navigate('/');
-            }, 1000);
+            }, 2000);
         } else {
             notification.error({ message: 'Error', description: 'DNI o contraseña incorrectos' });
         }

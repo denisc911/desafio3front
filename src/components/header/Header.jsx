@@ -11,14 +11,17 @@ const Header = () => {
     // Estado local para el usuario
     const [user, setUser] = useState(null);
 
+    // useEffect para actualizar el estado cuando cambie localStorage
     useEffect(() => {
-        // Obtener el usuario desde localStorage cuando se monta el componente
         const storedUser = localStorage.getItem('user');
         if (storedUser) {
             setUser(JSON.parse(storedUser));
+        } else {
+            setUser(null); // Si no hay usuario, asegurarse que el estado es null
         }
-    }, []); // Se ejecuta solo una vez al montar el componente
+    }, []); // Solo se ejecuta al cargar el componente
 
+    // Función para manejar el logout
     const onLogout = (e) => {
         e.preventDefault();
         // Eliminar el usuario de localStorage y actualizar el estado
@@ -26,6 +29,20 @@ const Header = () => {
         setUser(null);
         navigate('/login'); // Redirigir a la página de login
     };
+
+    // useEffect para observar cambios en localStorage (cuando el usuario inicia sesión desde otra parte)
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            const storedUser = localStorage.getItem('user');
+            if (storedUser && !user) {
+                setUser(JSON.parse(storedUser));
+            } else if (!storedUser && user) {
+                setUser(null);
+            }
+        }, 1000); // Comprobación cada segundo
+
+        return () => clearInterval(intervalId); // Limpiar intervalo al desmontar el componente
+    }, [user]); // Ejecutar si el usuario cambia
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light">

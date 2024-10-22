@@ -1,3 +1,4 @@
+import ArticlesCards from "../components/articles/ArticlesCards"
 import ChartsCarousel from "../components/charts/ChartsCarousel"
 
 export default function Hucha () {
@@ -7,8 +8,9 @@ export default function Hucha () {
       
       <div className="container">
         
-          <ChartsCarousel /> 
+         {/*  <ChartsCarousel />  */}
         
+          <ArticlesCards />
       </div>
     </main> 
       
