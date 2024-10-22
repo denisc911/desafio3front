@@ -92,19 +92,3 @@
     background-color: #005f62;
     transform: translateY(-2px);
 }
-
-/* Media query para dispositivos móviles */
-@media (max-width: 600px) {
-    .login-container {
-        padding: 20px; /* Espaciado interno reducido */
-        width: 95%; /* Ancho del 95% para pantallas más pequeñas */
-    }
-
-    .login-container h1 {
-        font-size: 20px; /* Tamaño del texto del título más pequeño */
-    }
-
-    .login-container button[type="submit"] {
-        font-size: 14px; /* Tamaño del texto del botón más pequeño */
-    }
-}

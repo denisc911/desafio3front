@@ -4,6 +4,10 @@
   align-items: center;
   margin-top: 50px;
   background-color: #000000; /* Keep your original background color */
+  position: fixed;
+  bottom: 0;
+  width: 100svw;
+  height: 8svh;
 }
 
 .menu_item {
